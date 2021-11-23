@@ -5,7 +5,7 @@
     <title>Hello babe</title>
 </head>
 <body>
-
+<canvas id="myCanvas" width="800" height="500" style="border: 1px solid black"></canvas>
 </body>
 <script>
     function gradingStudents(grades) {
@@ -13,16 +13,29 @@
             if (grades[i] < 38) {
                 grades[i];
             } else if (grades[i] % 5 >= 3) {
-                grades[i] = grades[i] + (5 - grades[i]%5)
+                grades[i] = grades[i] + (5 - grades[i] % 5)
             } else {
-                grades[i]
+                grades[i];
             }
         }
         return grades
     }
 
-    let arr1 = [73,67,38,33]
+    let arr1 = [73, 67, 38, 33]
     let a = gradingStudents(arr1)
     console.log(a)
+
+
+    function drawCircle(ctx) {
+        ctx.beginPath()
+        ctx.arc(100, 100, 80, 0, Math.PI * 2)
+        ctx.fillStyle = "red"
+        ctx.fill()
+        ctx.closePath()
+    }
+    let ctx = document.getElementById("myCanvas").getContext("2d");
+
+    drawCircle(ctx)
+
 </script>
 </html>
