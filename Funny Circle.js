@@ -50,7 +50,6 @@ function creatCircle() {
 function creatMultiCircle(){
     for (let i = 0; i < 30; i++) {
         creatCircle();
-
     }
     // setTimeout(creatMultiCircle,1000)
 }

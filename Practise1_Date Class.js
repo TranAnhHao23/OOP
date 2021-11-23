@@ -19,6 +19,7 @@ class MyDate {
 
     getMonth() {
         return this.month;
+
     }
 
     setMonth(monthSet) {
@@ -42,6 +43,7 @@ class MyDate {
 
     toString(){
         console.log(this.day + "/" + this.month + "/" + this.year)
+        let myDay = new Date(this.day, this.month, this.year)
     }
 
 }

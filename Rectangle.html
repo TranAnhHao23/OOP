@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanVas" width="800" height="500" style="border: 1px solid black"></canvas>
+<p id="result"></p>
+</body>
+<script>
+    class Rectangle {
+        width
+        height
+        color
+
+        constructor(width, height, color) {
+            this.width = width;
+            this.height = height;
+            this.color = color
+        }
+
+        setWidth(width) {
+            this.width = width
+        }
+
+        getWidth() {
+            return this.width
+        }
+
+        setHeiht(height) {
+            this.height = height
+        }
+
+        getHeight() {
+            return this.height
+        }
+
+        getP() {
+            return (this.height + this.width) * 2
+        }
+
+        getA() {
+            return (this.height * this.width)
+        }
+        creatRectangle(){
+            let ctx = document.getElementById("myCanVas").getContext("2d");
+            ctx.fillStyle = this.color;
+            ctx.fillRect(100,100,this.width,this.height);
+        }
+
+    }
+
+    let rec1 = new Rectangle(100,50,"green")
+
+    document.getElementById("result").innerHTML = "Chu vi bằng " + rec1.getP() + ", Diện tích bằng " + rec1.getA()
+    rec1.creatRectangle()
+
+</script>
+</html>
