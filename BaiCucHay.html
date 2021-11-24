@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello babe</title>
+</head>
+<body>
+</body>
+<script>
+    // function migratoryBirds(arr) {
+    //     let count = []
+    //     for (let i = 0; i < arr.length - 1; i++) {
+    //         count[i] = 1
+    //     }
+    //     for (let i = 0; i < arr.length - 1; i++) {
+    //         for (let j = i + 1; j < arr.length; j++) {
+    //             if (arr[i] === arr[j]) {
+    //                 count[i]++
+    //             }
+    //         }
+    //     }
+    //     let max = count[0];
+    //     let minValue = arr[0];
+    //     for (let i = 0; i < count.length; i++) {
+    //         let tempCount = 0;
+    //         let tempMin = 0;
+    //         if (max <= count[i]){
+    //             tempCount = max
+    //             max = count[i]
+    //             tempMin = minValue
+    //             minValue = arr[i]
+    //         if (tempCount === max && tempMin < arr[i]) {
+    //             minValue = tempMin
+    //         }
+    //         }
+    //     }
+    //
+    //     return minValue
+    // }
+
+    function migratoryBirds(arr){
+        let newArr = []
+        for (let i = 0; i < arr.length; i++) {
+            if (newArr.indexOf(arr[i])===-1){
+                newArr.push(arr[i])
+            }
+        }
+
+        let count = []
+            for (let i = 0; i < newArr.length; i++) {
+                count[i] = 0
+            }
+        for (let i = 0; i < newArr.length; i++) {
+            for (let j = 0; j < arr.length; j++) {
+                if (newArr[i] === arr[j]){
+                    count[i]++
+                }
+            }
+        }
+        let max = count[0];
+        let minValue = newArr[0];
+        for (let i = 0; i < count.length; i++) {
+            let tempCount = 0;
+            let tempMin = 0;
+            if (max <= count[i]) {
+                tempCount = max
+                max = count[i]
+                tempMin = minValue
+                minValue = newArr[i]
+                if (tempCount === max && tempMin < newArr[i]) {
+                    minValue = tempMin
+                }
+            }
+        }
+
+        return minValue
+
+    }
+
+
+    let arr = [1, 4, 4, 4, 5,1, 1]
+    console.log(migratoryBirds(arr))
+
+
+</script>
+</html>
